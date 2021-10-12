@@ -115,13 +115,12 @@ class TestScript
         $companies=new Company();
         $e_companies=[];
         $companies=Company::get_compaines_tree($companies->get_compnies());
-	    //$e_companies[]=Company::recursiveSum($companies[0]);
-        foreach ($companies as $key => $company) {
+	foreach ($companies as $key => $company) {
         	$e_companies[]=Company::recursiveSum($companies[0]);
 
         }
         echo json_encode($e_companies);
-        //echo 'Total time: '.  (microtime(true) - $start);
+        echo 'Total time: '.  (microtime(true) - $start);
     }
 }
 
